@@ -11,6 +11,7 @@ const socials = [
   { key: 'snapchat', label: 'Snapchat', href: 'https://www.snapchat.com/add/mina_ayman169?share_id=AfjaEhvfQLqd4hWga3SeGg&locale=en_EG' },
 ];
 
+const mapUrl = 'https://maps.app.goo.gl/EQUprKPQP3PNax3X9?g_st=iw';
 const qrUrl = 'https://link.gettap.co/DentaloraDentalClinic171169';
 const qrImage = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=8&data=${encodeURIComponent(qrUrl)}`;
 
@@ -56,6 +57,16 @@ export default function Home() {
         <small>{ar ? 'عن العيادة' : 'ABOUT US'}</small>
         <h2>{ar ? 'رعاية أسنان بهدوء واهتمام.' : 'Dentalora'}</h2>
         <p>{ar ? 'رعاية متخصصة وتجربة بسيطة وهادئة للمريض، من لحظة الحجز وحتى زيارتك للعيادة.' : 'Professional dental care with a calm, simple patient experience. We keep the journey clear from booking to your visit.'}</p>
+        <div className={styles.aboutMeta}>
+          <div className={styles.aboutContactCard}>
+            <span className={styles.aboutMetaIcon}>☎</span>
+            <div><strong>{ar ? 'اتصلي بنا' : 'Call the clinic'}</strong><a href="tel:01119090808">01119090808</a><a href="tel:0233447671">0233447671</a></div>
+          </div>
+          <div className={styles.aboutContactCard}>
+            <span className={styles.aboutMetaIcon}>⌖</span>
+            <div><strong>{ar ? 'عنوان العيادة' : 'Clinic location'}</strong><span>{ar ? 'العنوان الدقيق على الخريطة' : 'Exact clinic pin on Google Maps'}</span><a className={styles.inlineMap} href={mapUrl} target="_blank" rel="noreferrer">{ar ? 'فتح الخريطة' : 'Open Google Maps'} ↗</a></div>
+          </div>
+        </div>
       </section>
 
       <section id="doctor" className={styles.section}>
@@ -72,11 +83,6 @@ export default function Home() {
           </div>
           <div className={styles.qrPanel}><img src={qrImage} alt="Dentalora QR code" /><div><strong>{ar ? 'امسحي QR' : 'Scan to connect'}</strong><p>{ar ? 'وصلي لكل روابط العيادة في خطوة واحدة.' : 'Access Dentalora links in one quick scan.'}</p></div></div>
         </div>
-      </section>
-
-      <section className={styles.location} aria-label="Clinic location">
-        <div><small>{ar ? 'موقع العيادة' : 'CLINIC LOCATION'}</small><h2>{ar ? 'موقعنا على الخريطة' : 'Find Dentalora on the map'}</h2><p>{ar ? 'هنضيف العنوان الدقيق ورابط الخريطة هنا بمجرد تزويدنا بعنوان العيادة.' : 'The exact clinic address and map pin will be added here once the clinic address is provided.'}</p></div>
-        <a className={styles.mapButton} href="https://www.google.com/maps/search/?api=1&query=Dentalora%20Dental%20Clinic" target="_blank" rel="noreferrer">{ar ? 'فتح Google Maps' : 'Open Google Maps'} ↗</a>
       </section>
 
       <footer className={styles.footer}><Logo className={styles.footerLogo} compact /><strong>Dentalora</strong><span>{ar ? 'ابتسامتك هي أولويتنا.' : 'Your smile is our priority.'}</span></footer>
