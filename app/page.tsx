@@ -12,6 +12,7 @@ const socials = [
 ];
 
 const mapUrl = 'https://maps.app.goo.gl/EQUprKPQP3PNax3X9?g_st=iw';
+const clinicAddress = '39 El-Batal Ahmed Abd El-Aziz, Ad Doqi, Dokki, Giza Governorate 3753601';
 const qrUrl = 'https://link.gettap.co/DentaloraDentalClinic171169';
 const qrImage = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=8&data=${encodeURIComponent(qrUrl)}`;
 
@@ -64,7 +65,7 @@ export default function Home() {
           </div>
           <div className={styles.aboutContactCard}>
             <span className={styles.aboutMetaIcon}>⌖</span>
-            <div><strong>{ar ? 'عنوان العيادة' : 'Clinic location'}</strong><span>{ar ? 'العنوان الدقيق على الخريطة' : 'Exact clinic pin on Google Maps'}</span><a className={styles.inlineMap} href={mapUrl} target="_blank" rel="noreferrer">{ar ? 'فتح الخريطة' : 'Open Google Maps'} ↗</a></div>
+            <div><strong>{ar ? 'عنوان العيادة' : 'Clinic address'}</strong><span>{clinicAddress}</span><a className={styles.inlineMap} href={mapUrl} target="_blank" rel="noreferrer">{ar ? 'فتح الخريطة' : 'Open Google Maps'} ↗</a></div>
           </div>
         </div>
       </section>
