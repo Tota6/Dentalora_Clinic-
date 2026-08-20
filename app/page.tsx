@@ -34,59 +34,66 @@ export default function Home() {
     <main dir={ar ? 'rtl' : 'ltr'} className={styles.page}>
       <header className={styles.nav}>
         <Link href="/" className={styles.brand} aria-label="Dentalora home"><Logo className={styles.brandLogo} compact /><span>Dentalora</span></Link>
-        <nav aria-label="Main navigation"><a href="#about">{ar ? 'عن العيادة' : 'About Us'}</a><a href="#doctor">{ar ? 'الدكتور' : 'Doctor'}</a><a href="#connect">{ar ? 'تواصل معنا' : 'Connect'}</a></nav>
+        <nav aria-label="Main navigation">
+          <a href="#booking">{ar ? 'الحجز' : 'Booking'}</a>
+          <a href="#contact">{ar ? 'اتصلي بنا' : 'Contact'}</a>
+          <a href="#location">{ar ? 'الموقع' : 'Location'}</a>
+          <a href="#connect">{ar ? 'تواصل معنا' : 'Connect'}</a>
+        </nav>
         <div className={styles.navActions}>
           <button className={styles.lang} onClick={() => setAr(!ar)} aria-label="Change language"><span className={!ar ? styles.activeLang : ''}>EN</span><span className={ar ? styles.activeLang : ''}>ع</span></button>
           <Link className={styles.doctorLogin} href="/doctor/login">{ar ? 'دخول الطبيب' : 'Doctor login'}</Link>
+          <a className={styles.navBook} href="#booking">{ar ? 'احجزي الآن' : 'Book Appointment'} ↗</a>
         </div>
       </header>
 
-      <section id="booking" className={styles.bookingFirst}>
-        <div className={styles.logoHero} aria-hidden="true"><Logo compact /></div>
-        <div className={styles.bookingIntro}>
-          <h1>{ar ? <>ابتسامتك هي <em>أولويتنا.</em></> : <>Your smile is <em>our priority.</em></>}</h1>
-          <p>{ar ? 'احجزي موعدك بسهولة وفي خطوات بسيطة.' : 'Book your appointment in a few simple steps.'}</p>
+      <section className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <small>{ar ? 'ابتسامات صحية · حياة أفضل' : 'HEALTHY SMILES · BETTER LIVES'}</small>
+          <h1>{ar ? <>ابتسامتك، <em>هي أولويتنا.</em></> : <>Your Smile,<br/><em>Our Priority.</em></>}</h1>
+          <p>{ar ? 'رعاية أسنان احترافية في تجربة هادئة وبسيطة، تبدأ من حجز موعدك.' : 'Professional dental care with a calm, simple experience — starting with an easy appointment.'}</p>
+          <div className={styles.heroActions}><a className={styles.primary} href="#booking">{ar ? 'احجزي موعدك' : 'Book Appointment'} →</a><a className={styles.secondary} href="#contact">{ar ? 'تواصلي معنا' : 'Contact us'} →</a></div>
         </div>
-        <div className={styles.bookingCard}>
-          <div className={styles.bookingHeading}><div><small>{ar ? 'الحجز' : 'BOOKING'}</small><h2>{ar ? 'احجزي موعدك' : 'Book your visit'}</h2></div><span className={styles.step}>{ar ? 'بسيط وآمن' : 'Simple & secure'}</span></div>
-          <BookingForm ar={ar} />
-        </div>
-      </section>
-
-      <section id="about" className={styles.section}>
-        <div className={styles.sectionBrand}><Logo compact /></div>
-        <small>{ar ? 'عن العيادة' : 'ABOUT US'}</small>
-        <h2>{ar ? 'رعاية أسنان بهدوء واهتمام.' : 'Dentalora'}</h2>
-        <p>{ar ? 'رعاية متخصصة وتجربة بسيطة وهادئة للمريض، من لحظة الحجز وحتى زيارتك للعيادة.' : 'Professional dental care with a calm, simple patient experience. We keep the journey clear from booking to your visit.'}</p>
-        <div className={styles.aboutMeta}>
-          <div className={styles.aboutContactCard}>
-            <span className={styles.aboutMetaIcon}>☎</span>
-            <div><strong>{ar ? 'اتصلي بنا' : 'Call the clinic'}</strong><a href="tel:01119090808">01119090808</a><a href="tel:0233447671">0233447671</a></div>
-          </div>
-          <div className={styles.aboutContactCard}>
-            <span className={styles.aboutMetaIcon}>⌖</span>
-            <div><strong>{ar ? 'عنوان العيادة' : 'Clinic address'}</strong><span>{clinicAddress}</span><a className={styles.inlineMap} href={mapUrl} target="_blank" rel="noreferrer">{ar ? 'فتح الخريطة' : 'Open Google Maps'} ↗</a></div>
-          </div>
+        <div className={styles.heroVisual} aria-hidden="true">
+          <div className={styles.glow}></div><div className={styles.orbit}></div><Logo className={styles.heroLogo} compact />
+          <div className={styles.heroBadge}>{ar ? 'دينتالورا' : 'Dentalora'}<span>{ar ? 'عيادة الأسنان' : 'Dental Clinic'}</span></div>
         </div>
       </section>
 
-      <section id="doctor" className={styles.section}>
-        <small>{ar ? 'طبيبنا' : 'OUR DOCTOR'}</small><h2>{ar ? 'د. مينا أيمن' : 'Dr. Mina Ayman'}</h2>
-        <article className={styles.doctorCard}><div className={styles.doctorLogo}><Logo compact /></div><div><h3>{ar ? 'د. مينا أيمن' : 'Dr. Mina Ayman'}</h3><p>{ar ? 'طبيب أسنان · عيادة دينتالورا' : 'Dentist · Dentalora Clinic'}</p></div></article>
+      <section id="booking" className={styles.bookingSection}>
+        <div className={styles.sectionEyebrow}><span></span>{ar ? 'الحجز' : 'BOOKING'}<span></span></div>
+        <h2>{ar ? 'احجزي موعدك بسهولة' : 'Book your appointment'}</h2>
+        <p className={styles.sectionLead}>{ar ? 'كل احتياجات الحجز في مكان واحد.' : 'Everything you need to book your visit, in one simple place.'}</p>
+        <div className={styles.bookingCard}><div className={styles.bookingHeading}><div><small>{ar ? 'بسيط وآمن' : 'SIMPLE & SECURE'}</small><h3>{ar ? 'اختاري الموعد المناسب لكِ' : 'Choose the visit that suits you'}</h3></div><div className={styles.bookingMark}><Logo compact /></div></div><BookingForm ar={ar} /></div>
       </section>
 
-      <section id="connect" className={styles.connect}>
-        <div className={styles.connectHeading}><small>{ar ? 'تواصل معنا' : 'CONNECT WITH US'}</small><h2>{ar ? 'كل طرق التواصل مع دينتالورا' : 'Everything Dentalora, in one place'}</h2><p>{ar ? 'تابعينا على منصاتنا أو امسحي QR للوصول السريع.' : 'Follow the clinic on social media or scan the QR code for quick access.'}</p></div>
+      <section id="contact" className={styles.contactSection}>
+        <div className={styles.sectionEyebrow}><span></span>{ar ? 'اتصلي بنا' : 'CONTACT US'}<span></span></div>
+        <h2>{ar ? 'خلي ابتسامتك تبدأ هنا.' : 'Get in touch'}</h2>
+        <p className={styles.sectionLead}>{ar ? 'إحنا هنا عشان نساعدك.' : 'We are here to help you smile brighter.'}</p>
+        <div className={styles.contactGrid}>
+          <a href="tel:01119090808" className={styles.infoCard}><span>☎</span><div><strong>01119090808</strong><small>{ar ? 'موبايل' : 'Mobile'}</small></div>↗</a>
+          <a href="tel:0233447671" className={styles.infoCard}><span>☎</span><div><strong>0233447671</strong><small>{ar ? 'أرضي' : 'Landline'}</small></div>↗</a>
+          <a href="mailto:dentaloradentalclinic@gmail.com" className={styles.infoCard}><span>✉</span><div><strong>dentaloradentalclinic@gmail.com</strong><small>{ar ? 'البريد الإلكتروني' : 'Email'}</small></div>↗</a>
+        </div>
+      </section>
+
+      <section id="location" className={styles.locationSection}>
+        <div className={styles.locationCopy}><div className={styles.sectionEyebrow}><span></span>{ar ? 'موقعنا' : 'FIND US'}<span></span></div><h2>{ar ? 'موقع العيادة' : 'Our Location'}</h2><p>{ar ? 'زورينا في الدقي.' : 'Visit us at our clinic in Dokki.'}</p><div className={styles.addressCard}><span>⌖</span><div><strong>Dentalora Dental Clinic</strong><p>{clinicAddress}</p><a href={mapUrl} target="_blank" rel="noreferrer">{ar ? 'فتح Google Maps' : 'Open Google Maps'} ↗</a></div></div></div>
+        <a className={styles.mapCard} href={mapUrl} target="_blank" rel="noreferrer"><div className={styles.mapGrid}></div><div className={styles.mapPin}>⌖</div><div className={styles.mapLabel}><strong>Dentalora</strong><span>Dokki, Giza</span></div><span className={styles.mapButton}>{ar ? 'فتح الخريطة' : 'Open Google Maps'} ↗</span></a>
+      </section>
+
+      <section id="connect" className={styles.connectSection}>
+        <div className={styles.connectHeading}><div><div className={styles.sectionEyebrow}><span></span>{ar ? 'تواصل معنا' : 'CONNECT WITH US'}<span></span></div><h2>{ar ? 'تابعينا' : 'Follow our journey'}</h2><p>{ar ? 'كل روابط العيادة في مكان واحد.' : 'Stay connected for tips, updates & transformations.'}</p></div></div>
         <div className={styles.connectGrid}>
-          <div className={styles.socialPanel}>
-            {socials.map((social) => <a key={social.key} href={social.href} target="_blank" rel="noreferrer" className={styles.socialLink}><span className={`${styles.socialIcon} ${styles[social.key]}`}><SocialIcon type={social.key} /></span><span><strong>{social.label}</strong><small>{ar ? 'افتح الصفحة' : 'Open profile'}</small></span><span className={styles.arrow}>↗</span></a>)}
-            <a className={styles.emailLink} href="mailto:dentaloradentalclinic@gmail.com"><span className={styles.emailIcon}>✉</span><span><strong>{ar ? 'البريد الإلكتروني' : 'Email'}</strong><small>dentaloradentalclinic@gmail.com</small></span></a>
-          </div>
-          <div className={styles.qrPanel}><img src={qrImage} alt="Dentalora QR code" /><div><strong>{ar ? 'امسحي QR' : 'Scan to connect'}</strong><p>{ar ? 'وصلي لكل روابط العيادة في خطوة واحدة.' : 'Access Dentalora links in one quick scan.'}</p></div></div>
+          <div className={styles.socialPanel}>{socials.map((social) => <a key={social.key} href={social.href} target="_blank" rel="noreferrer" className={styles.socialLink}><span className={`${styles.socialIcon} ${styles[social.key]}`}><SocialIcon type={social.key} /></span><span><strong>{social.label}</strong><small>{ar ? 'افتح الصفحة' : 'Visit our page'}</small></span><span className={styles.arrow}>↗</span></a>)}<a className={styles.emailLink} href="mailto:dentaloradentalclinic@gmail.com"><span className={styles.emailIcon}>✉</span><span><strong>Email</strong><small>dentaloradentalclinic@gmail.com</small></span></a></div>
+          <div className={styles.qrPanel}><img src={qrImage} alt="Dentalora QR code" /><div><strong>{ar ? 'امسحي QR Code' : 'Scan QR Code'}</strong><p>{ar ? 'وصلي لكل روابط العيادة فورًا.' : 'Visit our profiles instantly.'}</p></div></div>
         </div>
       </section>
 
-      <footer className={styles.footer}><Logo className={styles.footerLogo} compact /><strong>Dentalora</strong><span>{ar ? 'ابتسامتك هي أولويتنا.' : 'Your smile is our priority.'}</span></footer>
+      <section className={styles.finalCta}><div><h2>{ar ? 'جاهزة لابتسامة أكثر صحة وإشراقًا؟' : 'Ready for a healthier, brighter smile?'}</h2><p>{ar ? 'احجزي موعدك اليوم.' : 'Book your appointment today.'}</p></div><a className={styles.primary} href="#booking">{ar ? 'احجزي موعدك' : 'Book Appointment'} →</a></section>
+
+      <footer className={styles.footer}><div className={styles.footerBrand}><Logo className={styles.footerLogo} compact /><strong>Dentalora</strong><small>{ar ? 'ابتسامتك هي أولويتنا.' : 'Your smile is our priority.'}</small></div><div><strong>Contact</strong><span>01119090808</span><span>0233447671</span><span>dentaloradentalclinic@gmail.com</span></div><div><strong>Location</strong><span>39 El-Batal Ahmed Abd El-Aziz</span><span>Ad Doqi, Dokki, Giza</span></div><div className={styles.footerSocials}>{socials.map(s=><a key={s.key} href={s.href} target="_blank" rel="noreferrer">{s.label}</a>)}</div></footer>
     </main>
   );
 }
