@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" role="img" aria-labelledby="title desc">
+<title id="title">Dentalora Dental Clinic logo</title>
+<desc id="desc">Gold stylized tooth and Dentalora Dental Clinic wordmark</desc>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2D28A"/><stop offset=".45" stop-color="#C59A52"/><stop offset="1" stop-color="#9B6A24"/></linearGradient></defs>
+<g fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round">
+<path stroke-width="15" d="M105 28c-44 0-71 39-58 84l36 142c8 31 39 34 49 4l26-76c6-17 18-18 25 0l25 77c10 30 41 27 49-4l37-143c11-43-17-84-60-84-27 0-45 17-59 30-14-13-32-30-60-30Z"/>
+<path stroke-width="12" d="M191 77c28 11 53-5 67-21"/><path stroke-width="12" d="M183 105c-6 22-4 42 6 59 8 14 5 31-7 40-12 9-20 20-19 36"/><path stroke-width="12" d="M186 153c18-12 35-7 40 7 5 14-3 26-15 35-12 9-17 24-13 38"/>
+</g>
+<text x="180" y="315" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="52" fill="#B68135">Dentalora</text>
+<g fill="#B68135"><rect x="34" y="339" width="75" height="2" rx="1"/><rect x="251" y="339" width="75" height="2" rx="1"/></g>
+<text x="180" y="370" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="22" letter-spacing="3" fill="#B68135">DENTAL CLINIC</text>
+</svg>
