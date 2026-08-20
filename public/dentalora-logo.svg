@@ -1,12 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" role="img" aria-labelledby="title desc">
-<title id="title">Dentalora Dental Clinic logo</title>
-<desc id="desc">Gold stylized tooth and Dentalora Dental Clinic wordmark</desc>
-<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2D28A"/><stop offset=".45" stop-color="#C59A52"/><stop offset="1" stop-color="#9B6A24"/></linearGradient></defs>
-<g fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round">
-<path stroke-width="15" d="M105 28c-44 0-71 39-58 84l36 142c8 31 39 34 49 4l26-76c6-17 18-18 25 0l25 77c10 30 41 27 49-4l37-143c11-43-17-84-60-84-27 0-45 17-59 30-14-13-32-30-60-30Z"/>
-<path stroke-width="12" d="M191 77c28 11 53-5 67-21"/><path stroke-width="12" d="M183 105c-6 22-4 42 6 59 8 14 5 31-7 40-12 9-20 20-19 36"/><path stroke-width="12" d="M186 153c18-12 35-7 40 7 5 14-3 26-15 35-12 9-17 24-13 38"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620" role="img" aria-labelledby="title desc">
+<title id="title">Dentalora Dental Clinic</title>
+<desc id="desc">Dentalora gold tooth logo with wordmark</desc>
+<defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F8D98E"/>
+    <stop offset=".32" stop-color="#D4A74E"/>
+    <stop offset=".68" stop-color="#B9822F"/>
+    <stop offset="1" stop-color="#8E5B1E"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+    <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#5D421F" flood-opacity=".24"/>
+  </filter>
+</defs>
+<g filter="url(#shadow)">
+  <path fill="url(#gold)" d="M259 42c-34-30-79-40-121-22-55 23-78 82-63 139l52 197c9 35 47 42 61 8l39-99c7-18 17-27 31-27s24 9 31 27l39 99c14 34 52 27 61-8l52-197c15-57-8-116-63-139-42-18-87-8-119 22Zm-1 80c18-26 45-46 74-47 28-1 53 14 66 38-25-9-52-5-72 12-16 13-27 30-36 49-9-19-20-36-36-49-20-17-47-21-72-12 13-24 38-39 66-38 29 1 56 21 74 47Z"/>
+  <path d="M252 132c-7 31-5 59 11 84 12 19 10 42-6 57-17 16-29 30-28 58" fill="none" stroke="#FFF0C5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M285 153c30-10 54-27 69-48" fill="none" stroke="#FFF0C5" stroke-width="11" stroke-linecap="round"/>
+  <path d="M266 244c20-16 42-17 54-3 12 14 9 34-7 48-17 15-25 29-24 47" fill="none" stroke="#FFF0C5" stroke-width="11" stroke-linecap="round"/>
 </g>
-<text x="180" y="315" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="52" fill="#B68135">Dentalora</text>
-<g fill="#B68135"><rect x="34" y="339" width="75" height="2" rx="1"/><rect x="251" y="339" width="75" height="2" rx="1"/></g>
-<text x="180" y="370" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-size="22" letter-spacing="3" fill="#B68135">DENTAL CLINIC</text>
+<text x="260" y="435" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="72" letter-spacing="-1" fill="url(#gold)">Dentalora</text>
+<g fill="url(#gold)"><rect x="42" y="466" width="112" height="3" rx="1.5"/><rect x="366" y="466" width="112" height="3" rx="1.5"/></g>
+<text x="260" y="505" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="25" letter-spacing="5" fill="#B68135">DENTAL CLINIC</text>
 </svg>
