@@ -48,7 +48,6 @@ export default function Home() {
         </div>
 
         <div className={styles.bookingIntro}>
-          <small>{ar ? 'عيادة دينتالورا للأسنان' : 'DENTALORA DENTAL CLINIC'}</small>
           <h1>
             {ar ? <>ابتسامتك هي <em>أولويتنا.</em></> : <>Your smile is <em>our priority.</em></>}
           </h1>
