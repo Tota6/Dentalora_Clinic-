@@ -1,71 +1,62 @@
+'use client';
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from './page.module.css';
 import BookingForm from './booking-form';
 
 export default function Home() {
+  const [ar, setAr] = useState(false);
   return (
-    <main>
+    <main dir={ar ? 'rtl' : 'ltr'} className={styles.page}>
       <header className={styles.nav}>
         <Link href="/" className={styles.brand} aria-label="Dentalora home">
-          <span className={styles.logo}>D</span>
-          <span>Dentalora</span>
+          <span className={styles.logo}>D</span><span>Dentalora</span>
         </Link>
         <nav aria-label="Main navigation">
-          <a href="#about">About Us</a>
-          <a href="#doctor">Doctor</a>
+          <a href="#about">{ar ? 'عن العيادة' : 'About Us'}</a>
+          <a href="#doctor">{ar ? 'الدكتور' : 'Doctor'}</a>
         </nav>
-        <Link className={styles.doctorLogin} href="/doctor/login">Doctor login</Link>
+        <div className={styles.navActions}>
+          <button className={styles.lang} onClick={() => setAr(!ar)}>{ar ? 'English' : 'العربية'}</button>
+          <Link className={styles.doctorLogin} href="/doctor/login">{ar ? 'دخول الطبيب' : 'Doctor login'}</Link>
+        </div>
       </header>
 
       <section id="booking" className={styles.bookingFirst}>
         <div className={styles.bookingIntro}>
-          <small>DENTALORA CLINIC</small>
-          <h1>Your smile is <em>our priority.</em></h1>
-          <p>Book your appointment in a few simple steps.</p>
+          <small>{ar ? 'عيادة دينتالورا' : 'DENTALORA CLINIC'}</small>
+          <h1>{ar ? 'ابتسامتك هي <em>أولويتنا.</em>' : <>Your smile is <em>our priority.</em></>}</h1>
+          <p>{ar ? 'احجزي موعدك بسهولة وفي خطوات بسيطة.' : 'Book your appointment in a few simple steps.'}</p>
         </div>
         <div className={styles.bookingCard}>
           <div className={styles.bookingHeading}>
-            <div>
-              <small>BOOKING</small>
-              <h2>Book your visit</h2>
-            </div>
-            <span className={styles.step}>Simple & secure</span>
+            <div><small>{ar ? 'الحجز' : 'BOOKING'}</small><h2>{ar ? 'احجزي موعدك' : 'Book your visit'}</h2></div>
+            <span className={styles.step}>{ar ? 'بسيط وآمن' : 'Simple & secure'}</span>
           </div>
-          <BookingForm />
+          <BookingForm ar={ar} />
         </div>
       </section>
 
       <section id="about" className={styles.section}>
-        <small>ABOUT US</small>
-        <h2>Dentalora</h2>
-        <p>Professional dental care with a calm, simple patient experience. We keep the journey clear from booking to your visit.</p>
+        <small>{ar ? 'عن العيادة' : 'ABOUT US'}</small>
+        <h2>{ar ? 'رعاية أسنان بهدوء واهتمام.' : 'Dentalora'}</h2>
+        <p>{ar ? 'رعاية متخصصة وتجربة بسيطة وهادئة للمريض، من لحظة الحجز وحتى زيارتك للعيادة.' : 'Professional dental care with a calm, simple patient experience. We keep the journey clear from booking to your visit.'}</p>
       </section>
 
       <section id="doctor" className={styles.section}>
-        <small>OUR DOCTOR</small>
-        <h2>Dr. Mina Ayman</h2>
+        <small>{ar ? 'طبيبنا' : 'OUR DOCTOR'}</small>
+        <h2>{ar ? 'د. مينا أيمن' : 'Dr. Mina Ayman'}</h2>
         <article className={styles.doctorCard}>
           <div className={styles.doctorInitial}>M</div>
-          <div>
-            <h3>Dr. Mina Ayman</h3>
-            <p>Dentist · Dentalora Clinic</p>
-            <span>Professional credentials and additional doctor information will be added as provided by the clinic.</span>
-          </div>
+          <div><h3>{ar ? 'د. مينا أيمن' : 'Dr. Mina Ayman'}</h3><p>{ar ? 'طبيب أسنان · عيادة دينتالورا' : 'Dentist · Dentalora Clinic'}</p></div>
         </article>
       </section>
 
       <section className={styles.contact} aria-label="Clinic contact">
-        <div>
-          <small>CONTACT</small>
-          <h2>Dentalora Clinic</h2>
-        </div>
+        <div><small>{ar ? 'تواصل معنا' : 'CONTACT'}</small><h2>{ar ? 'عيادة دينتالورا' : 'Dentalora Clinic'}</h2></div>
         <a href="mailto:dentaloradentalclinic@gmail.com">dentaloradentalclinic@gmail.com</a>
       </section>
-
-      <footer className={styles.footer}>
-        <strong>Dentalora</strong>
-        <span>Your smile is our priority.</span>
-      </footer>
+      <footer className={styles.footer}><strong>Dentalora</strong><span>{ar ? 'ابتسامتك هي أولويتنا.' : 'Your smile is our priority.'}</span></footer>
     </main>
   );
 }
