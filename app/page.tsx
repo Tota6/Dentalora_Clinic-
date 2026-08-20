@@ -71,7 +71,7 @@ export default function Home() {
         <a href="mailto:dentaloradentalclinic@gmail.com">dentaloradentalclinic@gmail.com</a>
       </section>
 
-      <footer>
+      <footer className={styles.footer}>
         <strong>Dentalora</strong>
         <span>Your smile is our priority.</span>
         <span>Premium Dental Care · Booking Portal</span>
