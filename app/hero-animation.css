@@ -1,0 +1,54 @@
+/* Dentalora hero image motion — uses the supplied clinic image unchanged. */
+main section#home > div:first-child {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+main section#home > div:first-child::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/dentalora-hero.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.10;
+  transform: scale(1.04);
+  transform-origin: center;
+  animation: dentaloraHeroMotion 18s ease-in-out infinite alternate;
+}
+
+main section#home > div:first-child > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes dentaloraHeroMotion {
+  0% {
+    transform: scale(1.04) translate3d(-1.5%, 0, 0);
+    background-position: 48% 50%;
+  }
+  100% {
+    transform: scale(1.12) translate3d(1.5%, -1%, 0);
+    background-position: 56% 46%;
+  }
+}
+
+@media (max-width: 680px) {
+  main section#home > div:first-child::before {
+    inset: -18%;
+    opacity: 0.075;
+    background-size: cover;
+    animation-duration: 20s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main section#home > div:first-child::before {
+    animation: none;
+    transform: none;
+  }
+}
