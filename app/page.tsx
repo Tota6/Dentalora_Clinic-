@@ -76,7 +76,7 @@ export default function Home() {
       <div className={styles.heroVisual} aria-label="Dentalora clinic interior">
         <div className={styles.archGlow}/><div className={styles.archWall}><div className={styles.archLogo}><Logo className={styles.heroLogo}/></div></div>
         <div className={styles.reception}><div className={styles.receptionTop}/><div className={styles.receptionFront}/></div>
-        <div className={styles.plant plantOne}/><div className={styles.plant plantTwo}/><div className={styles.windowGlow}/>
+        <div className={`${styles.plant} ${styles.plantOne}`}/><div className={`${styles.plant} ${styles.plantTwo}`}/><div className={styles.windowGlow}/>
       </div>
       <div className={styles.heroBenefits}><span>◉ {ar ? 'تكنولوجيا متقدمة' : 'Advanced Technology'}</span><span>◉ {ar ? 'بيئة مريحة' : 'Comfortable Environment'}</span><span>◉ {ar ? 'رعاية متخصصة' : 'Expert Care'}</span><span>◉ {ar ? 'راحة المريض' : 'Patient Comfort'}</span></div>
     </section>
